@@ -1,0 +1,54 @@
+Change test!
+
+What is javaFMI?
+	javaFMI is a Java Library for the functional mock-up interface (or FMI)
+
+	FMI defines a standardized interface to be used in computer simulations. The FMI Standard has beed developed by a large number of software companies and research centers that have worked in a cooperation project under the name of MODELISAR
+
+	This library addresses the connection of a java application with a FMU (functional mock-up unit).
+
+License
+	javaFMI is licensed under the LGPL v2.1. The LGPL guarantees that this library will stay open source, protecting your work.
+
+Project Page
+https://bitbucket.org/siani/javafmi/wiki/Home
+
+Getting help
+	Do you have a question, a problem, some feedback, or suggestions for javaFMI? Do it through our Issue Tracker
+
+Team
+	José Juan Hernández-Cabrera (SIANI. University of Las Palmas. SPAIN)
+	José Évora-Gómez (SIANI. University of Las Palmas. SPAIN)
+	Johan Cortés-Montenegro (SIANI. University of Las Palmas. SPAIN)
+
+Contributors
+	Enrique Kremers (EIFER. University of Karlsruhe. GERMANY)
+	Swann Gasnier (Électricité de France. FRANCE)
+
+Usage
+    The next code shows an example of usage:
+
+    int startTime = 1;
+    int stopTime = 2000;
+    int stepSize = 1;
+    Simulation simulation = new Simulation("path/to/foo.fmu");
+    simulation.init(starTime,stopTime);
+    for(int i=0; i < 2000; i++)
+        simulation.doStep(stepSize)
+    simulation.terminate();
+
+    You can pass the timeout via constructor, but it is no necessary by default is 1000
+    
+    int timeout = 2000;
+    Simulation simulation = new Simulation("foo.fmu", timeout);
+    
+    Variables can be read and written in the FMU as follows:
+
+    simulation.writeVariable("fooVar1", 2);
+    double fooVar2 = (double)simulation.readVariable("fooVar2").getValue();
+
+Dependencies
+	JavaFMI Library includes the libraries below, you do not have to download it:
+	· jna-3.5.2.jar Licenced under LGPL v2.1 or later
+	· simple-xml-2.7.jar Licenced under Apache Licence v2.0
+    · It is implemented and tested with JVM of 32 bits

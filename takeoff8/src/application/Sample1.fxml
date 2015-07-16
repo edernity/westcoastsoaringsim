@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/* 
+ * Copyright (c) 2015 Dennis Eder
+ * This work is based on a paraglider simulation and visualization game by Peter Spear,
+ * Director of the Westcoast Soaring Club in Canada, originally written in ProcessingJS 
+ * (see http://www3.telus.net/cschwab/simPG/simGlider.pde), 
+ * as announced here: http://www.paraglidingforum.com/viewtopic.php?t=43670 in 2011.
+ * The goal is to port his game to JavaFX and use JavaFMI from SIANI/Spain to modularize 
+ * pilot, glider and weather models showcasing FMI/FMU interoperability in a fun way.
+ * It allows the user to design and exchange custom models and compare against others and even manual flight.
+ * 
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *  
+ *  To see a full copy of the GNU Affero General Public License
+ *  see <http://www.gnu.org/licenses/>.
+ *
+ * Contributors: 
+ *  Dennis Eder - port of Peter Spear's Javascript-based paraglider simulator (http://www3.telus.net/cschwab/simPG/simGlider.pde) to JavaFX, some rapid drafts to offer my team a debuggable environment and jumpstart into single-day hackfest
+ */
+ -->
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<VBox fillWidth="false" maxWidth="400.0" xmlns="http://javafx.com/javafx/8.0.51" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Sample1Controller">
+   <children>
+      <AnchorPane>
+         <children>
+            <HBox layoutX="65.0" layoutY="50.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+                     <image>
+                        <Image url="@../../resources/media/pgsim_uk/CC_BY_NC_SA_88x31.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane HBox.hgrow="ALWAYS">
+                     <children>
+                        <TextArea fx:id="licenseinfo" editable="false" focusTraversable="false" layoutX="-56.0" layoutY="-84.0" prefRowCount="1" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane>
+         <children>
+            <Canvas fx:id="canvas" focusTraversable="true" height="400.0" width="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane maxWidth="400.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TextArea fx:id="disclaimer" focusTraversable="false" prefRowCount="3" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane>
+         <children>
+            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="btn_loadPilot" mnemonicParsing="false" text="load pilot ..." />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

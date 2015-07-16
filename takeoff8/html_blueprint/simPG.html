@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paraglider Simulator</title>
+  <script src="processing-1.3.6.min.js"></script>
+<link rel="stylesheet" href="style.css"></head>
+<body><h1>Paraglider Simulator</h1>
+<p> Instructions: Put the mouse in the middle of the screen to fly at trim speed. Moving the mouse down adds brakes. Moving the mouse up pushes on speed bar. Just like a real glider, it will stall. It takes some skill to come out of stall without restalling or getting giftwrapped. Also like a real glider it will collapse if the angle of attack is too low. Try to keep the glider overhead. It is difficult in stong conditions but it will keep flying if you do.</p>
+<table><tr><td><p>
+<canvas data-processing-sources="simGlider.pde"></canvas>
+</p></td><td>
+<p>Keyboard:<br>
+'space bar' reset everything<br>
+'p' toggle pause<br>
+'w' change wind mode (calm, vert. sinusoidal, horiz. sinusoidal, trubulence)<br>
+'a' engage the autopilot (will try to maintain pitch quickly and air speed slowly)<br>
+'+' and '-' inc/decrease wind speed<br>
+'[' and ']' inc/decrease the period of wind changes<br>
+'j' and 'n' inc/decrease the glider skin drag<br>
+'h' and 'b' inc/decrease the pilot mass<br>
+'g' and 'v' inc/decrease the glider mass<br>
+'f' and 'c' inc/decrease the glider line length<br>
+'t' give the glider a push to start it tumbling<br>
+'r' give the glider a push to start it reverse tumbling<br>
+'m' mark a reference point and print glide info from the last reference point<br>
+'d' spew flight data<br>
+<p>If you cannot see and control a little pink glider your browser may not support this javascript program. Try getting the latest version. Firefox 3.6 and 8.0 work.</p>
+<p>The grid is 10m x 10m. The glider is roughly to scale. The physics of this glider is reasonably accurate. With the default settings, best glide is 9.3 at 43km/h. Min sink is 1.0m/s at 29km/h. Stall is 24.5km/h. Full bar is 63km/h </p>
+<p>Have fun. Work on your active flying, infinite tumbles and loop de loops.</p>
+</p></td></table>
+<p>
+<a rel="license" href="http://www.gnu.org/licenses/agpl.html">GNU AFFERO GENERAL PUBLIC LICENSE</a></p>
+</html>
